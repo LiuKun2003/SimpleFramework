@@ -3,22 +3,20 @@ using UnityEngine.Assertions;
 
 namespace LK.SimpleFramework
 {
-    public class ViewBase : MonoBehaviour
+    public class ViewBase : MonoBehaviour, IView
     {
-        #region Public or protected methods
         /// <summary>
         /// 获取指定类型的控制器
         /// </summary>
-        protected T GetController<T>() where T : ControllerBase, new()
+        public T GetController<T>() where T : class, IController, new()
         {
-            T res = ControllerSingleton.Instance.GetController<T>();
+            T res = InstanceCollector.Instance.GetInstance<T>();
 
-            #if UNITY_ASSERTIONS
+#if UNITY_ASSERTIONS
             Assert.IsNotNull(res);
-            #endif
+#endif
 
             return res;
         }
-        #endregion
     }
 }

@@ -2,29 +2,23 @@
 
 namespace LK.SimpleFramework
 {
-    public abstract class ControllerBase
+    /// <summary>
+    /// 表示一个控制器
+    /// </summary>
+    public abstract class ControllerBase : IController
     {
-        #region Public or protected methods
-
         /// <summary>
-        /// 初始化控制器
+        /// 获取指定的数据模型
         /// </summary>
-        public abstract void Init();
-
-        /// <summary>
-        /// 获取指定类型的数据模型
-        /// </summary>
-        protected T GetModel<T>() where T : ModelBase, new()
+        public T GetModel<T>() where T : class, IModel, new()
         {
-            T res = ModelSingleton.Instance.GetModel<T>();
+            T res = InstanceCollector.Instance.GetInstance<T>();
 
-            #if UNITY_ASSERTIONS
+#if UNITY_ASSERTIONS
             Assert.IsNotNull(res);
-            #endif
+#endif
 
             return res;
         }
-
-        #endregion
     }
 }

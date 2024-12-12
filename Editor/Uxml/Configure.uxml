@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label text="Simple Framework" display-tooltip-when-elided="true" name="Title" style="font-size: 18px; -unity-font-style: bold; overflow: hidden; padding-top: 2px; padding-right: 4px; padding-bottom: 2px; padding-left: 3px;" />
+    <ui:Foldout text="Script" value="false" tooltip="脚本设置" style="-unity-font-style: bold; background-color: rgb(71, 71, 71); font-size: 14px; overflow: hidden; padding-left: 2px; padding-bottom: 2px; border-bottom-width: 1px; border-left-color: rgb(34, 34, 34); border-right-color: rgb(34, 34, 34); border-top-color: rgb(34, 34, 34); border-bottom-color: rgb(34, 34, 34); border-right-width: 1px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-top-width: 1px; border-left-width: 1px; padding-top: 2px; padding-right: 2px; margin-top: 1px; margin-right: 3px; margin-bottom: 1px; margin-left: 3px; -unity-text-outline-color: rgb(54, 54, 54);">
+        <ui:VisualElement name="DefineReplace" style="background-color: rgb(70, 70, 70); padding-top: 2px; padding-bottom: 2px; padding-right: 2px; padding-left: 2px; margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px;">
+            <ui:Label text="Replace Define" display-tooltip-when-elided="true" name="Title" tooltip="将C#模版定义好的宏替换为自定义字符串，在此处指定需要替换的内容。" style="-unity-font-style: normal; padding-right: 0; padding-left: 0; font-size: 12px; padding-bottom: 2px;" />
+            <ui:VisualElement>
+                <ui:TextField picking-mode="Ignore" label="Define" name="Define" binding-path="Script_Define" view-data-key="ScriptDefine" multiline="true" tooltip="要替换的宏，使用逗号和换行分隔，严格区分大小写。" style="font-size: 12px; -unity-font-style: normal;" />
+                <ui:TextField picking-mode="Ignore" label="Replace" name="Replace" readonly="false" binding-path="Script_Replace" view-data-key="ScriptReplace" multiline="true" tooltip="要替换对应的宏的字符串，使用逗号和换行分隔。" style="font-size: 12px; -unity-font-style: normal;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:Foldout>
+</ui:UXML>

@@ -1,18 +1,10 @@
 ﻿namespace LK.SimpleFramework
 {
     /// <summary>
-    /// 数据模型接口
+    /// 表示一个数据模型
     /// </summary>
-    public abstract class ModelBase
+    public abstract class ModelBase : IModel
     {
-
-        #region Public or protected methods
-
-        /// <summary>
-        /// 初始化数据模型
-        /// </summary>
-        public abstract void Init();
-
-        #endregion
+        
     }
 }
