@@ -1,5 +1,6 @@
 {
     "name": "LK.SimpleFramework.Runtime",
+    "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

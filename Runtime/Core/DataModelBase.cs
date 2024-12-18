@@ -3,7 +3,7 @@
     /// <summary>
     /// 表示一个数据模型
     /// </summary>
-    public abstract class ModelBase : IModel
+    public abstract class DataModelBase : IDataModel
     {
         
     }
